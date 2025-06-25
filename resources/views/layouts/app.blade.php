@@ -91,9 +91,9 @@
                                 </li>
                             </ul>
                         @else
-                            {{-- <a class="nav-link" href="{{ route('login') }}">
+                            <a class="nav-link" href="{{ route('login') }}">
                                 <img src="{{ asset('images/user.svg') }}" alt="Login">
-                            </a> --}}
+                            </a>
                         @endauth
                     </li>
                 </ul>
