@@ -33,7 +33,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarsFurni">
-                {{-- <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item @if (request()->routeIs('home')) active @endif">
                         <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </li>
@@ -52,7 +52,7 @@
                     <li class="nav-item @if (request()->routeIs('contact')) active @endif">
                         <a class="nav-link" href="{{ route('contact') }}">Contact us</a>
                     </li>
-                </ul> --}}
+                </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                     {{-- Cart Icon --}}
@@ -159,12 +159,12 @@
                 <div class="col-lg-8">
                     <div class="row links-wrap">
                         <div class="col-6 col-sm-6 col-md-3">
-                            {{-- <ul class="list-unstyled">
+                            <ul class="list-unstyled">
                                 <li><a href="{{ route('about') }}">About us</a></li>
                                 <li><a href="{{ route('services') }}">Services</a></li>
                                 <li><a href="{{ route('blog') }}">Blog</a></li>
                                 <li><a href="{{ route('contact') }}">Contact us</a></li>
-                            </ul> --}}
+                            </ul>
                         </div>
                         <div class="col-6 col-sm-6 col-md-3">
                             <ul class="list-unstyled">
