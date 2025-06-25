@@ -13,8 +13,8 @@
                         <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
                             vulputate velit imperdiet dolor tempor tristique.</p>
                         <p>
-                            {{-- <a href="{{ route('shop') }}" class="btn btn-secondary me-2">Shop Now</a>
-                            <a href="{{ route('about') }}" class="btn btn-white-outline">Explore</a> --}}
+                            <a href="{{ route('shop') }}" class="btn btn-secondary me-2">Shop Now</a>
+                            <a href="{{ route('about') }}" class="btn btn-white-outline">Explore</a>
                         </p>
                     </div>
                 </div>
