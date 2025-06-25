@@ -16,7 +16,7 @@
     <link href="{{ asset('css/tiny-slider.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <title>Furni - @yield('title')</title>
+    <title>Halawangi Parfume | @yield('title')</title>
 </head>
 
 <body>

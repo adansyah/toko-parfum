@@ -29,7 +29,7 @@
     <!-- End Hero Section -->
 
     <!-- Start Product Section -->
-    {{-- <div class="product-section">
+    <div class="product-section">
         <div class="container">
             <div class="row">
                 <!-- Start Column 1 -->
@@ -42,27 +42,26 @@
                 <!-- End Column 1 -->
 
                 <!-- Start Column 2 -->
-                @forelse ($furnitures as $furniture)
-                    <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                        <a class="product-item" href="{{ route('shop', $furniture->id) }}">
-                            <img src="{{ $furniture->image ? asset('storage/' . $furniture->image) : asset('images/product-placeholder.png') }}"
-                                class="img-fluid product-thumbnail">
-                            <h3 class="product-title">{{ $furniture->name }}</h3>
-                            <strong class="product-price">${{ number_format($furniture->price, 2) }}</strong>
-                            <!-- <span class="icon-cross">
-                                            <img src="{{ asset('images/cross.svg') }}" class="img-fluid">
-                                        </span> -->
-                        </a>
-                    </div>
-                @empty
+                {{-- @forelse ($furnitures as $furniture) --}}
+                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                    <a class="product-item" href="">
+                        <img src="{{ asset('images/bowl-2.png') }}" class="img-fluid product-thumbnail">
+                        <h3 class="product-title">Victoria Secret</h3>
+                        <strong class="product-price">Rp. 200.000</strong>
+                        <span class="icon-cross">
+                            <img src="{{ asset('images/cross.svg') }}" class="img-fluid">
+                        </span>
+                    </a>
+                </div>
+                {{-- @empty
                     <div class="col-12">
                         <p>No furniture available.</p>
                     </div>
-                @endforelse
+                    @endforelse --}}
                 <!-- End Column 2-4 -->
             </div>
         </div>
-    </div> --}}
+    </div>
     <!-- End Product Section -->
 
     <!-- Start Why Choose Us Section -->
@@ -206,29 +205,28 @@
                             <span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
                         </div>
 
-                        {{-- <div class="testimonial-slider">
-                            @forelse ($testimonials as $testimonial)
-                                <div class="item">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-8 mx-auto">
-                                            <div class="testimonial-block text-center">
-                                                <blockquote class="mb-5">
-                                                    <p>“{{ $testimonial->quote }}”</p>
-                                                </blockquote>
-                                                <div class="author-info">
-                                                    <div class="author-pic">
-                                                        <img src="{{ $testimonial->image ? asset('storage/' . $testimonial->image) : asset('images/person-placeholder.jpg') }}"
-                                                            alt="{{ $testimonial->name }}" class="img-fluid">
-                                                    </div>
-                                                    <h3 class="font-weight-bold">{{ $testimonial->name }}</h3>
-                                                    <span
-                                                        class="position d-block mb-3">{{ $testimonial->position }}</span>
+                        <div class="testimonial-slider">
+                            {{-- @forelse ($testimonials as $testimonial) --}}
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>“Parfumnya Enak Wangi”</p>
+                                            </blockquote>
+                                            <div class="author-info">
+                                                <div class="author-pic">
+                                                    <img src="{{ asset('images/bowl-2.png') }}" alt="Victoria Secret"
+                                                        class="img-fluid">
                                                 </div>
+                                                <h3 class="font-weight-bold">Syahdan Mutahariq</h3>
+                                                <span class="position d-block mb-3">Pembeli</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            @empty
+                            </div>
+                            {{-- @empty
                                 <div class="item">
                                     <div class="row justify-content-center">
                                         <div class="col-lg-8 mx-auto">
@@ -236,8 +234,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforelse
-                        </div> --}}
+                                @endforelse --}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -258,23 +256,22 @@
             </div>
 
             <div class="row">
-                {{-- @forelse ($recentBlogs as $blog)
-                    <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-                        <div class="post-entry">
-                            <a href="{{ route('blog', $blog->id) }}" class="post-thumbnail">
-                                <img src="{{ $blog->image ? asset('storage/' . $blog->image) : asset('images/post-placeholder.jpg') }}"
-                                    alt="{{ $blog->title }}" class="img-fluid">
-                            </a>
-                            <div class="post-content-entry">
-                                <h3><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h3>
-                                <div class="meta">
-                                    <span>by <a href="#">{{ $blog->author }}</a></span> <span>on <a
-                                            href="#">{{ $blog->published_at->format('M d, Y') }}</a></span>
-                                </div>
+                {{-- @forelse ($recentBlogs as $blog) --}}
+                <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                    <div class="post-entry">
+                        <a href="" class="post-thumbnail">
+                            <img src="{{ asset('images/bowl-2.png') }}" alt="Blog" class="img-fluid">
+                        </a>
+                        <div class="post-content-entry">
+                            <h3><a href="">Blog Parfum</a></h3>
+                            <div class="meta">
+                                <span>by <a href="#">Halawangi Parfume</a></span> <span>on <a href="#">25 Jun
+                                        2025</a></span>
                             </div>
                         </div>
                     </div>
-                @empty
+                </div>
+                {{-- @empty
                     <div class="col-12">
                         <p>No recent blogs available.</p>
                     </div>
