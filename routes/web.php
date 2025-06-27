@@ -9,8 +9,10 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\admin\StockController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\KategoryController;
+use App\Http\Controllers\admin\PenggunaController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\AuthController as AdminAuthController;
 
@@ -38,3 +40,4 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/kategory', [KategoryController::class, 'index'])->name('kategory');
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/stock', [StockController::class, 'index'])->name('stock');
+Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');

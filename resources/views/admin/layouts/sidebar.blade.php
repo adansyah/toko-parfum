@@ -16,13 +16,16 @@
                             class="hide-menu">Kategori
                         </span></a>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="menu" aria-expanded="false"><i
-                            data-feather="coffee" class="feather-icon"></i><span class="hide-menu">Produk</span></a>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('product') }}"
+                        aria-expanded="false"><i data-feather="coffee" class="feather-icon"></i><span
+                            class="hide-menu">Produk</span></a>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="stok" aria-expanded="false"><i
-                            data-feather="box" class="feather-icon"></i><span class="hide-menu">Stok</span></a></li>
-                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="pengguna" aria-expanded="false"><i
-                            data-feather="user" class="feather-icon"></i><span class="hide-menu">Pengguna</span></a>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('stock') }}"
+                        aria-expanded="false"><i data-feather="box" class="feather-icon"></i><span
+                            class="hide-menu">Stok</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('pengguna') }}"
+                        aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span
+                            class="hide-menu">Pengguna</span></a>
                 </li>
 
                 {{-- <li class="list-divider"></li>
