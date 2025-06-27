@@ -6,18 +6,22 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\admin\AuthController as AdminAuthController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\KategoryController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
 
 
-// user login
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// user login   
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/login/form', [AuthController::class, 'login'])->name('login.form');
+Route::post('/register/form', [AuthController::class, 'regisForm'])->name('register.form');
 // user view
 Route::middleware(['auth', 'user'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/about', [AboutController::class, 'index'])->name('about');
     Route::get('/shop', [ShopController::class, 'index'])->name('shop');
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
@@ -26,8 +30,8 @@ Route::middleware(['auth', 'user'])->group(function () {
 });
 
 // admin login
-
+Route::get('halawangi/admin', [AdminAuthController::class, 'index']);
 // admin view
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index']);
-});
+Route::middleware(['auth', 'admin'])->group(function () {});
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/kategory', [KategoryController::class, 'index'])->name('kategory');

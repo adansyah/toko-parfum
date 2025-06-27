@@ -16,10 +16,16 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role === 'user') {
-            return $next($request);
+        if (!Auth::check()) {
+            // Belum login → redirect ke login admin
+            return redirect('/login');
         }
 
-        abort(403, 'Unauthorized');
+        if (Auth::user()->role !== 'user') {
+            // Sudah login, tapi bukan admin → tolak akses
+            abort(403, 'Akses ditolak.');
+        }
+
+        return $next($request);
     }
 }

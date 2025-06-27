@@ -10,10 +10,10 @@
                 <h2 class="mb-4 text-center">Login</h2>
 
                 @if (session('error'))
-                    <div class="alert alert-danger">{{ session('error') }}</div>
+                    <div class="alert alert-success">{{ session('error') }}</div>
                 @endif
 
-                <form method="POST" action="">
+                <form method="post" action="{{ route('login.form') }}">
                     @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>

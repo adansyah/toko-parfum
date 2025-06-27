@@ -16,10 +16,16 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role === 'admin') {
-            return $next($request);
+        if (!Auth::check()) {
+            // Belum login → redirect ke login admin
+            return redirect('halawangi/admin');
         }
 
-        abort(403, 'Unauthorized');
+        if (Auth::user()->role !== 'admin') {
+            // Sudah login, tapi bukan admin → tolak akses
+            abort(403, 'Akses ditolak.');
+        }
+
+        return $next($request);
     }
 }

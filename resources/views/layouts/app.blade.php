@@ -25,7 +25,8 @@
     <!-- Navigation -->
     <nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark" aria-label="Furni navigation bar">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">Furni<span>.</span></a>
+            <a class="navbar-brand" href="{{ route('home') }}">Halawangi<span
+                    style="color: #0cfa0c;font-style: italic;">Parfume</span></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
                 aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">

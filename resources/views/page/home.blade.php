@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="hero-img-wrap">
-                        <img src="{{ asset('images/couch.png') }}" class="img-fluid">
+                        <img src="{{ asset('images/parfum.png') }}" class="img-fluid w-75 mt-5">
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 {{-- @forelse ($furnitures as $furniture) --}}
                 <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
                     <a class="product-item" href="">
-                        <img src="{{ asset('images/bowl-2.png') }}" class="img-fluid product-thumbnail">
+                        <img src="{{ asset('images/parfum.png') }}" class="img-fluid product-thumbnail">
                         <h3 class="product-title">Victoria Secret</h3>
                         <strong class="product-price">Rp. 200.000</strong>
                         <span class="icon-cross">

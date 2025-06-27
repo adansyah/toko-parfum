@@ -4,18 +4,21 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="admins" aria-expanded="false"><i
-                            data-feather="home" class="feather-icon"></i><span class="hide-menu">Dashboard</span></a>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('dashboard') }}"
+                        aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                            class="hide-menu">Dashboard</span></a>
                 </li>
                 <li class="list-divider"></li>
                 <li class="nav-small-cap"><span class="hide-menu">Applications</span></li>
 
-                <li class="sidebar-item"> <a class="sidebar-link" href="kategori" aria-expanded="false"><i
-                            data-feather="archive" class="feather-icon"></i><span class="hide-menu">Kategori
+                <li class="sidebar-item"> <a class="sidebar-link" href="{{ route('kategory') }}"
+                        aria-expanded="false"><i data-feather="archive" class="feather-icon"></i><span
+                            class="hide-menu">Kategori
                         </span></a>
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="menu" aria-expanded="false"><i
-                            data-feather="coffee" class="feather-icon"></i><span class="hide-menu">Menu</span></a></li>
+                            data-feather="coffee" class="feather-icon"></i><span class="hide-menu">Produk</span></a>
+                </li>
                 <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="stok" aria-expanded="false"><i
                             data-feather="box" class="feather-icon"></i><span class="hide-menu">Stok</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="pengguna" aria-expanded="false"><i
