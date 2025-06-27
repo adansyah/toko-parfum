@@ -2,16 +2,17 @@
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\admin\AuthController as AdminAuthController;
-use App\Http\Controllers\admin\DashboardController;
-use App\Http\Controllers\admin\KategoryController;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\KategoryController;
+use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\AuthController as AdminAuthController;
 
 
 // user login   
@@ -35,3 +36,5 @@ Route::get('halawangi/admin', [AdminAuthController::class, 'index']);
 Route::middleware(['auth', 'admin'])->group(function () {});
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/kategory', [KategoryController::class, 'index'])->name('kategory');
+Route::get('/product', [ProductController::class, 'index'])->name('product');
+Route::get('/stock', [StockController::class, 'index'])->name('stock');
