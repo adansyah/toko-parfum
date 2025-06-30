@@ -34,10 +34,13 @@ Route::middleware(['auth', 'user'])->group(function () {
 
 // admin login
 Route::get('halawangi/admin', [AdminAuthController::class, 'index']);
+Route::post('/kategory/store', [KategoryController::class, 'store'])->name('kategory.store');
 // admin view
 Route::middleware(['auth', 'admin'])->group(function () {});
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/kategory', [KategoryController::class, 'index'])->name('kategory');
+Route::get('/kategory/{id}', [KategoryController::class, 'edit'])->name('kategory.edit');
+Route::get('/kategory/{id}', [KategoryController::class, 'destroy'])->name('kategory.destroy');
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/stock', [StockController::class, 'index'])->name('stock');
 Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');

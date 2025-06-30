@@ -50,13 +50,16 @@
                         <div class="card-body">
                             <h4 class="card-title">Zero Configuration</h4>
                             <h6 class="card-subtitle">
-                                <a href="" class="btn btn-rounded btn-outline-primary">Kategori</a>
+                                <a href="" class="btn btn-rounded btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target="#top-modal">Kategori</a>
+
                                 <a href="" class="btn btn-rounded btn-outline-success">Print</a>
                             </h6>
                             <div class="table-responsive">
                                 <table id="zero_config" class="table border table-striped table-bordered text-nowrap">
                                     <thead class="text-center">
                                         <tr>
+                                            <th>No</th>
                                             <th>Name Kategory</th>
                                             <th>Ukuran Botol</th>
                                             <th>Perbandingan</th>
@@ -65,27 +68,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Platinum</td>
-                                            <td>35ML</td>
-                                            <td>2 : 1</td>
-                                            <td>Luzi</td>
-                                            <th>
-                                                <a href="" class="btn btn-rounded btn-outline-warning">Edit</a>
-                                                <a href="" class="btn btn-rounded btn-outline-danger">Delete</a>
-                                            </th>
+                                        @forelse ($kategori as $data)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $data->name_kategory }}</td>
+                                                <td>{{ $data->botol }}</td>
+                                                <td>{{ $data->perbandingan }}</td>
+                                                <td>{{ $data->bibit }}</td>
+                                                <th>
+                                                    <a href="{{ route('kategori.edit', $data) }}"
+                                                        class="btn btn-rounded btn-outline-warning">Edit</a>
+                                                    <a href="{{ route('kategori.destroy', $data) }}"
+                                                        class="btn btn-rounded btn-outline-danger">Delete</a>
+                                                </th>
 
-                                        </tr>
-                                        <tr>
-                                            <td>Premium</td>
-                                            <td>35ML</td>
-                                            <td>1 : 1</td>
-                                            <td>Essentiels</td>
-                                            <th>
-                                                <a href="" class="btn btn-rounded btn-outline-warning">Edit</a>
-                                                <a href="" class="btn btn-rounded btn-outline-danger">Delete</a>
-                                            </th>
-                                        </tr>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="6" class="text-center">Data Kosong</td>
+                                            </tr>
+                                        @endforelse
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -93,21 +97,52 @@
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End PAge Content -->
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Container fluid  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- footer -->
 
-        <!-- ============================================================== -->
-        <!-- End footer -->
-        <!-- ============================================================== -->
-        <!-- *************************************************************** -->
-        <!-- End Top Leader Table -->
-        <!-- *************************************************************** -->
+        </div>
+
+        {{-- modal --}}
+        <div id="top-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-top">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="topModalLabel">kategori</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div>
+                                <label for="">Nama Kategory :</label>
+                                <input type="text" class="form-control" name="name_kategory">
+
+                            </div>
+                            <div>
+                                <label for="">Ukuran Botol :</label>
+                                <input type="text" class="form-control" name="botol">
+
+                            </div>
+                            <div>
+                                <label for="">Perbandingan :</label>
+                                <select name="perbandingan" id="" class="form-control">
+                                    <option value="">~~Pilih Perbandingan~~</option>
+                                    <option value="1:1">1:1</option>
+                                    <option value="2:1">2:1</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="">Produk Asal :</label>
+                                <input type="text" class="form-control" name="bibit">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
     </div>
 @endsection

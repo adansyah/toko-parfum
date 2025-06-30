@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Kategory;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class KategoryController extends Controller
 {
@@ -12,7 +13,8 @@ class KategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.page.kategori');
+        $kategori = Kategory::all();
+        return view('admin.page.kategori', compact('kategori'));
     }
 
     /**
@@ -28,7 +30,15 @@ class KategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kategory =  $request->validate([
+            'name_kategory' => 'required',
+            'perbandingan' => 'required',
+            'botol' => 'required',
+            'bibit' => 'required',
+        ]);
+
+        Kategory::create($kategory);
+        return redirect()->back()->with('error');
     }
 
     /**
