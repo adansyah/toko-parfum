@@ -34,7 +34,7 @@ Route::middleware(['auth', 'user'])->group(function () {
 
 // admin login
 Route::get('halawangi/admin', [AdminAuthController::class, 'index']);
-Route::post('/kategory/store', [KategoryController::class, 'store'])->name('kategory.store');
+// Route::post('/kategory/store', [KategoryController::class, 'store'])->name('kategory.store');
 // admin view
 Route::middleware(['auth', 'admin'])->group(function () {});
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

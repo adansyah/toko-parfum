@@ -6,21 +6,21 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('kategory.store') }}" method="post">
+                <form wire:submit="save">
                     @csrf
                     <div>
                         <label for="">Nama Kategory :</label>
-                        <input type="text" class="form-control" name="name_kategory" required>
+                        <input type="text" class="form-control" wire:model="name_kategory" required>
 
                     </div>
                     <div>
                         <label for="">Ukuran Botol :</label>
-                        <input type="text" class="form-control" name="botol" required>
+                        <input type="text" class="form-control" wire:model="botol" required>
 
                     </div>
                     <div>
                         <label for="">Perbandingan :</label>
-                        <select name="perbandingan" id="" class="form-control" required>
+                        <select id="" wire:model="perbandingan" class="form-control" required>
                             <option value="">~~Pilih Perbandingan~~</option>
                             <option value="1:1">1:1</option>
                             <option value="2:1">2:1</option>
@@ -28,7 +28,7 @@
                     </div>
                     <div>
                         <label for="">Produk Asal :</label>
-                        <input type="text" class="form-control" name="bibit" required>
+                        <input type="text" class="form-control" wire:model="bibit" required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
@@ -40,3 +40,13 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+@push('scripts')
+    <script>
+        window.addEventListener('close-modal', event => {
+            var modal = bootstrap.Modal.getInstance(document.getElementById('top-modal'));
+            if (modal) {
+                modal.hide();
+            }
+        });
+    </script>
+@endpush
