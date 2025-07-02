@@ -11,8 +11,8 @@ class KategoryRequest extends FormRequest
     {
         return [
             'name_kategory' => 'required',
-            'perbandingan' => 'required',
-            'botol' => 'required|in:1:1,2:1',
+            'botol' => 'required|in:15ML,25ML,35ML,50ML,100ML,',
+            'perbandingan' => 'required|in:1:1,2:1',
             'bibit' => 'required',
         ];
     }
