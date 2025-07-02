@@ -109,20 +109,21 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="">
+                        <form action="{{ route('kategory.store') }}" method="post">
+                            @csrf
                             <div>
                                 <label for="">Nama Kategory :</label>
-                                <input type="text" class="form-control" name="name_kategory">
+                                <input type="text" class="form-control" name="name_kategory" required>
 
                             </div>
                             <div>
                                 <label for="">Ukuran Botol :</label>
-                                <input type="text" class="form-control" name="botol">
+                                <input type="text" class="form-control" name="botol" required>
 
                             </div>
                             <div>
                                 <label for="">Perbandingan :</label>
-                                <select name="perbandingan" id="" class="form-control">
+                                <select name="perbandingan" id="" class="form-control" required>
                                     <option value="">~~Pilih Perbandingan~~</option>
                                     <option value="1:1">1:1</option>
                                     <option value="2:1">2:1</option>
@@ -130,14 +131,15 @@
                             </div>
                             <div>
                                 <label for="">Produk Asal :</label>
-                                <input type="text" class="form-control" name="bibit">
+                                <input type="text" class="form-control" name="bibit" required>
                             </div>
-                        </form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+
+                    </form>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->

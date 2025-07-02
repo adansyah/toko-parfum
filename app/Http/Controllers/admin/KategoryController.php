@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\Kategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\KategoryRequest;
 
 class KategoryController extends Controller
 {
@@ -28,17 +29,12 @@ class KategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(KategoryRequest $request)
     {
-        $kategory =  $request->validate([
-            'name_kategory' => 'required',
-            'perbandingan' => 'required',
-            'botol' => 'required',
-            'bibit' => 'required',
-        ]);
-
+        $kategory =  $request->validated();
         Kategory::create($kategory);
-        return redirect()->back()->with('error');
+        // return redirect()->back();
+        dd($kategory);
     }
 
     /**
